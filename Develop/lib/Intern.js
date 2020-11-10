@@ -2,9 +2,12 @@
 class Intern {
   // Just like constructor functions, classes can accept arguments
   constructor(name, id, email, school) {
-    this.internname = name;
-    this.internid = id;
-    this.internemail = email;
-    this.internschool = school;
+    this.name = name;
+    this.role = "Intern";
+    this.id = id;
+    this.email = email;
+    this.school = school;
   }
 }
+
+module.exports = Intern;

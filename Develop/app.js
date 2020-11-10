@@ -12,11 +12,11 @@ const render = require("./lib/htmlRenderer");
 
 const employees = [];
 
-const employeeQs = [
+const employee = [
   {
     type: "list",
     message: "What type of team member would you like to add?",
-    name: "membertype",
+    name: "role",
     choices: [
       "Engineer",
       "Intern",
@@ -25,72 +25,72 @@ const employeeQs = [
   },
 ];
 
-const managerQs = [
+const manager = [
   {
     type: "input",
     message: "What is your manager's name?",
-    name: "managername",
+    name: "name",
   },
   {
     type: "input",
     message: "What is your manager's ID?",
-    name: "managerid",
+    name: "id",
   },
   {
     type: "input",
     message: "What is your manager's email?",
-    name: "manageremail",
+    name: "email",
   },
   {
     type: "input",
     message: "What is your manager's office phone number?",
-    name: "managerphone",
+    name: "officeNumber",
   },
 ];
 
-const engineerQs = [
+const engineer = [
   {
     type: "input",
     message: "What is your engineer's name?",
-    name: "engineername",
+    name: "name",
   },
   {
     type: "input",
     message: "What is your engineer's ID?",
-    name: "engineerid",
+    name: "id",
   },
   {
     type: "input",
     message: "What is your engineer's email?",
-    name: "engineeremail",
+    name: "email",
   },
   {
     type: "input",
     message: "What is your engineer's Github username?",
-    name: "engineergithub",
+    name: "github",
   },
 ];
 
-const internQs = [
+const intern = [
   {
     type: "input",
     message: "What is your intern's name?",
-    name: "internname",
+    name: "name",
   },
   {
     type: "input",
     message: "What is your intern's ID?",
-    name: "internid",
+    name: "id",
   },
   {
     type: "input",
     message: "What is your intern's email?",
-    name: "internemail",
+    name: "email",
   },
   {
     type: "input",
     message: "What is your intern's school?",
-    name: "internschool",
+    name: "school",
   },
 ];
 
