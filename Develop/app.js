@@ -94,6 +94,23 @@ const intern = [
   },
 ];
 
+writeToFile = () => {
+  
+}
+
+init = () => {
+  inquirer.prompt(employee).then(function (data) {
+    if (data === "Enginner") {
+      inquirer.prompt(engineer).then(function (data) {});
+    }
+    if (data === "Intern") {
+      inquirer.prompt(intern) {
+
+      }
+    }
+  });
+};
+
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
