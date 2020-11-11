@@ -94,18 +94,49 @@ const intern = [
   },
 ];
 
-writeToFile = () => {};
+buildTeam = () => {
+  inquirer.prompt(employee).then(function (data) {
+    //switch or conditional statement to find if its engineer or intern, run function
+  })
+};
+
+addEngineer = () => {
+  inquirer.prompt(engineer).then(function (data) {
+    const engineer = new Engineer(data.name, data.id, data.email, data.github);
+    employees.push(engineer);
+    buildTeam();
+  });
+};
+
+addManager = () => {};
+inquirer.prompt(manager).then(function (data) {
+  const manager = new Manager(
+    data.name,
+    data.id,
+    data.email,
+    data.officeNumber
+  );
+  employees.push(manager)
+  buildTeam()
+});
+addIntern = () => {
+  inquirer.prompt(intern).then(function (data) {
+    const intern = new Intern(
+      data.name,
+      data.id,
+      data.email,
+      data.school
+    );
+    employees.push(intern)
+    buildTeam()
+});
+
+saveTeam = () => {
+  //if user chooses not to add any more members, htmlrender
+};
 
 init = () => {
-  inquirer.prompt(employee).then(function (data) {
-    console.log(data);
-    if (data.role === "Engineer") {
-      inquirer.prompt(engineer).then(function (data) {});
-    }
-    if (data.role === "Intern") {
-      inquirer.prompt(intern).then(function (data) {});
-    }
-  });
+  getManager()
 };
 init();
 
