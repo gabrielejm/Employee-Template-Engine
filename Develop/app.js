@@ -97,7 +97,7 @@ const intern = [
 buildTeam = () => {
   inquirer.prompt(employee).then(function (data) {
     //switch or conditional statement to find if its engineer or intern, run function
-  })
+  });
 };
 
 addEngineer = () => {
@@ -116,27 +116,23 @@ inquirer.prompt(manager).then(function (data) {
     data.email,
     data.officeNumber
   );
-  employees.push(manager)
-  buildTeam()
+  employees.push(manager);
+  buildTeam();
 });
 addIntern = () => {
   inquirer.prompt(intern).then(function (data) {
-    const intern = new Intern(
-      data.name,
-      data.id,
-      data.email,
-      data.school
-    );
-    employees.push(intern)
-    buildTeam()
-});
+    const intern = new Intern(data.name, data.id, data.email, data.school);
+    employees.push(intern);
+    buildTeam();
+  });
+};
 
 saveTeam = () => {
   //if user chooses not to add any more members, htmlrender
 };
 
 init = () => {
-  getManager()
+  getManager();
 };
 init();
 
