@@ -108,17 +108,19 @@ addEngineer = () => {
   });
 };
 
-addManager = () => {};
-inquirer.prompt(manager).then(function (data) {
-  const manager = new Manager(
-    data.name,
-    data.id,
-    data.email,
-    data.officeNumber
-  );
-  employees.push(manager);
-  buildTeam();
-});
+addManager = () => {
+  inquirer.prompt(manager).then(function (data) {
+    const manager = new Manager(
+      data.name,
+      data.id,
+      data.email,
+      data.officeNumber
+    );
+    employees.push(manager);
+    buildTeam();
+  });
+};
+
 addIntern = () => {
   inquirer.prompt(intern).then(function (data) {
     const intern = new Intern(data.name, data.id, data.email, data.school);
@@ -129,6 +131,9 @@ addIntern = () => {
 
 saveTeam = () => {
   //if user chooses not to add any more members, htmlrender
+  if (data.role === "I do not want to add any more team members") {
+    render();
+  }
 };
 
 init = () => {
