@@ -105,6 +105,7 @@ addEngineer = () => {
     const engineer = new Engineer(data.name, data.id, data.email, data.github);
     employees.push(engineer);
     buildTeam();
+    writeToFile();
   });
 };
 
@@ -132,8 +133,15 @@ addIntern = () => {
 saveTeam = () => {
   //if user chooses not to add any more members, htmlrender
   if (data.role === "I do not want to add any more team members") {
-    render();
+    writeToFile();
   }
+};
+
+writeToFile = () => {
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR);
+  }
+  fs.writeFileSync(outputPath, render(employees), "utf-8");
 };
 
 init = () => {
