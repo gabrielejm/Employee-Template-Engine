@@ -137,7 +137,7 @@ saveTeam = () => {
 };
 
 init = () => {
-  getManager();
+  addManager();
 };
 init();
 
