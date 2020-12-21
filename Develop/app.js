@@ -90,20 +90,24 @@ const intern = [
   },
 ];
 
-buildTeam = () => {
-  //switch or conditional statement to find if its engineer or intern, run function
-  if ((employee.choices = "Engineer")) {
-    addEngineer();
-  } else if ((employee.choices = "Intern")) {
-    addIntern();
-  } else {
-    saveTeam();
-  }
-};
+// buildTeam = () => {
+//   //switch or conditional statement to find if its engineer or intern, run function
+//   if ((employee.choices = "Engineer")) {
+//     addEngineer();
+//   } else if ((employee.choices = "Intern")) {
+//     addIntern();
+//   }
+// };
 
 addEmployee = () => {
   inquirer.prompt(employee).then(function (data) {
-    buildTeam();
+    if (data.role === "Engineer") {
+      addEngineer();
+    } else if (data.role === "Intern") {
+      addIntern();
+    } else {
+      saveTeam();
+    }
   });
 };
 
@@ -111,8 +115,7 @@ addEngineer = () => {
   inquirer.prompt(engineer).then(function (data) {
     const engineer = new Engineer(data.name, data.id, data.email, data.github);
     employees.push(engineer);
-    buildTeam();
-    writeToFile();
+    addEmployee();
   });
 };
 
@@ -128,7 +131,7 @@ addIntern = () => {
   inquirer.prompt(intern).then(function (data) {
     const intern = new Intern(data.name, data.id, data.email, data.school);
     employees.push(intern);
-    buildTeam();
+    addEmployee();
   });
 };
 
@@ -146,6 +149,7 @@ writeToFile = () => {
 init = () => {
   addManager();
 };
+
 init();
 
 // Write code to use inquirer to gather information about the development team members,
