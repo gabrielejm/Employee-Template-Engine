@@ -10,6 +10,10 @@
 6. [License](#license)
 7. [Questions](#questions)
 
+![homework10snip](https://user-images.githubusercontent.com/63600183/102829383-f942a200-43b4-11eb-8612-a9aa7c9f5623.PNG)
+
+![homework10snip2](https://user-images.githubusercontent.com/63600183/102829397-02337380-43b5-11eb-9362-df6afae195cb.PNG)
+
 
 ### Description<a name="description"></a>
 
