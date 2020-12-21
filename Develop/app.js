@@ -17,11 +17,7 @@ const employee = [
     type: "list",
     message: "What type of team member would you like to add?",
     name: "role",
-    choices: [
-      "Engineer",
-      "Intern",
-      "I do not want to add any more team members",
-    ],
+    choices: ["Engineer", "Intern", "I do not want to add any more team members"],
   },
 ];
 
@@ -95,8 +91,19 @@ const intern = [
 ];
 
 buildTeam = () => {
+  //switch or conditional statement to find if its engineer or intern, run function
+  if ((employee.choices = "Engineer")) {
+    addEngineer();
+  } else if ((employee.choices = "Intern")) {
+    addIntern();
+  } else {
+    saveTeam();
+  }
+};
+
+addEmployee = () => {
   inquirer.prompt(employee).then(function (data) {
-    //switch or conditional statement to find if its engineer or intern, run function
+    buildTeam();
   });
 };
 
@@ -111,14 +118,9 @@ addEngineer = () => {
 
 addManager = () => {
   inquirer.prompt(manager).then(function (data) {
-    const manager = new Manager(
-      data.name,
-      data.id,
-      data.email,
-      data.officeNumber
-    );
+    const manager = new Manager(data.name, data.id, data.email, data.officeNumber);
     employees.push(manager);
-    buildTeam();
+    addEmployee();
   });
 };
 
@@ -131,10 +133,7 @@ addIntern = () => {
 };
 
 saveTeam = () => {
-  //if user chooses not to add any more members, htmlrender
-  if (data.role === "I do not want to add any more team members") {
-    writeToFile();
-  }
+  writeToFile();
 };
 
 writeToFile = () => {
