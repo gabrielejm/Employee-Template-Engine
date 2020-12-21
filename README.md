@@ -17,7 +17,7 @@ Using this app, the user can create a team of their employees. The app will prom
 
 ### Installation<a name="installation"></a>
 
-run 'npm i' in the root
+run 'npm i'
 
 ### Usage<a name="usage"></a>
 
